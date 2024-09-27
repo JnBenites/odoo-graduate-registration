@@ -1,0 +1,33 @@
+<odoo>
+    <!-- Definición de la acción del reporte para Graduado -->
+    <report
+        id="graduado_report"
+        model="graduados_lista.graduado"  <!-- Modelo relacionado -->
+        string="Reporte de Graduados"  <!-- Nombre del reporte -->
+        report_type="qweb-pdf"  <!-- Tipo de reporte (PDF) -->
+        file="graduados_lista.report_graduado_template"  <!-- Nombre del archivo de plantilla -->
+        name="graduados_lista.report_graduado_template"  <!-- Nombre interno de la plantilla -->
+        print_report_name="'Reporte de Graduados - %s' % (object.nombre_completo)"  <!-- Nombre dinámico del archivo PDF -->
+    />
+
+    <!-- Definición de la plantilla QWeb para el reporte PDF -->
+    <template id="report_graduado_template">
+        <t t-call="web.external_layout">  <!-- Utiliza el layout base de Odoo -->
+            <t t-foreach="doc_ids" t-as="graduado">
+                <div class="page">
+                    <h2>Datos del Graduado</h2>
+                    <p><strong>Nombre:</strong> <span t-field="graduado.nombre_completo"/></p>
+                    <p><strong>Cédula:</strong> <span t-field="graduado.cedula"/></p>
+                    <p><strong>Correo Institucional:</strong> <span t-field="graduado.correo_institucional"/></p>
+                    <p><strong>Correo Personal:</strong> <span t-field="graduado.correo_personal"/></p>
+                    <p><strong>Provincia:</strong> <span t-field="graduado.provincia"/></p>
+                    <p><strong>Cantón:</strong> <span t-field="graduado.canton"/></p>
+                    <p><strong>Parroquia:</strong> <span t-field="graduado.parroquia"/></p>
+                    <p><strong>Ingreso:</strong> <span t-field="graduado.ingreso"/></p>
+                    <p><strong>Culminación:</strong> <span t-field="graduado.culminacion"/></p>
+                    <p><strong>Título Obtenido:</strong> <span t-field="graduado.titulo_obtenido_id.nombre_completo"/></p>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

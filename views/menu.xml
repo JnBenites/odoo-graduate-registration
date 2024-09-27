@@ -1,0 +1,24 @@
+<odoo>
+    <!-- Menú raíz -->
+    <menuitem id="menu_graduados_root" name="Graduados" sequence="10"/>
+
+    <!-- Submenú para Carreras -->
+    <menuitem id="menu_carrera" name="Carreras" parent="menu_graduados_root" action="action_carrera" sequence="20"/>
+
+    <!-- Submenú para Graduados -->
+    <menuitem id="menu_graduado" name="Graduados" parent="menu_graduados_root" action="action_graduado" sequence="30"/>
+
+    <!-- Acción para Carreras -->
+    <record id="action_carrera" model="ir.actions.act_window">
+        <field name="name">Carreras</field>
+        <field name="res_model">graduados_lista.carrera</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Acción para Graduados -->
+    <record id="action_graduado" model="ir.actions.act_window">
+        <field name="name">Graduados</field>
+        <field name="res_model">graduados_lista.graduado</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
