@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_carrera_admin,carrera admin access,model_graduados_lista_carrera,group_tutorias_admin,1,1,1,1
-access_graduado_admin,graduado admin access,model_graduados_lista_graduado,group_tutorias_admin,1,1,1,1
+access_carrera_manager,carrera manager access,model_graduados_lista_carrera,group_graduados_manager,1,1,1,1
+access_graduado_manager,graduado manager access,model_graduados_lista_graduado,group_graduados_manager,1,1,1,1

@@ -1,0 +1,6 @@
+<odoo>
+    <record id="group_graduados_manager" model="res.groups">
+        <field name="name">Graduados Manager</field>
+        <field name="category_id" ref="base.module_category_education"/>
+    </record>
+</odoo>
